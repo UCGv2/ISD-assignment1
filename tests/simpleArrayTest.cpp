@@ -18,7 +18,7 @@ TEST_F(SimpleArrayTest, Destructor)
     });
     EXPECT_EQ(AllocationTracker::getCount(), 0U);
 }
-
+/*
 TEST_F(SimpleArrayTest, LegalOps)
 {
     AllocationTracker* directArray(new AllocationTracker[100]);
@@ -107,4 +107,6 @@ TEST_F(SimpleArrayTest, Compilation)
     // ca.reset();                        // This line is incorrect
     // ca.swap(a);                        // This line is incorrect
 }
+*/
 }
+
