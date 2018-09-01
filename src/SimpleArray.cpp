@@ -4,17 +4,15 @@
 #include "SimpleArray.h"
 
 
-SimpleArray::SimpleArray() : mArray(nullptr)
-{}
+SimpleArray::SimpleArray() : mArray(nullptr) {}
 
-SimpleArray::SimpleArray(AllocationTracker* a)
-{
-    if(a!=nullptr) {
+SimpleArray::SimpleArray(AllocationTracker *a) : mArray(nullptr) {
+    if (a != nullptr) {
         mArray = a;
     }
 }
 
-SimpleArray::~SimpleArray()
-{
-    delete mArray;
+SimpleArray::~SimpleArray() {
+    delete[](mArray);
+    mArray = nullptr;
 }
