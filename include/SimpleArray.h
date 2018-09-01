@@ -9,13 +9,13 @@
 class SimpleArray {
 public:
     /*** Add some constructors/destructor goodness here ***/
-    SimpleArray ();
+    SimpleArray();
 
-    SimpleArray (AllocationTracker*);
+    SimpleArray(AllocationTracker *);
 
     ~SimpleArray(); // should delete all things and return the allocation count to 0
 
-    SimpleArray &operator=(const SimpleArray&);
+    SimpleArray &operator=(const SimpleArray &);
 
     /**
      *  getReference is const and returns a non-const type in order to mimic
@@ -24,18 +24,19 @@ public:
      *  where it points, but may never be pointed to a different address; the
      *  same should be true of SimpleArrays-that-are-const.
      */
-    AllocationTracker& getReference(const uint32_t i) const;
+    AllocationTracker &getReference(const uint32_t i) const;
 
     /*** Need to add some things here ***/
 
-    void get() const;
+    AllocationTracker* get() const;
     void reset();
+    bool isNonNull() const;
 
 private:
     /*** Maybe some things here too ***/
 
     // Data members
-    AllocationTracker* mArray;
+    AllocationTracker *mArray;
 
 
 };

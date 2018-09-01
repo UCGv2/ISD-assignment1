@@ -16,3 +16,10 @@ SimpleArray::~SimpleArray() {
     delete[](mArray);
     mArray = nullptr;
 }
+
+AllocationTracker* SimpleArray::get() const {
+    return mArray;
+}
+bool SimpleArray::isNonNull() const {
+    return mArray != nullptr;
+}

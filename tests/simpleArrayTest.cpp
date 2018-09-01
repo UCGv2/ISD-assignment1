@@ -18,7 +18,7 @@ TEST_F(SimpleArrayTest, Destructor)
     });
     EXPECT_EQ(AllocationTracker::getCount(), 0U);
 }
-/*
+
 TEST_F(SimpleArrayTest, LegalOps)
 {
     AllocationTracker* directArray(new AllocationTracker[100]);
@@ -26,7 +26,7 @@ TEST_F(SimpleArrayTest, LegalOps)
     EXPECT_EQ(ca.get(), directArray);
     EXPECT_TRUE(ca.isNonNull());
 }
-
+/*
 TEST_F(SimpleArrayTest, GetReleaseSwap)
 {
     SimpleArray array1;
