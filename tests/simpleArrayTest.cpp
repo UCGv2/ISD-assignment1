@@ -26,7 +26,7 @@ TEST_F(SimpleArrayTest, LegalOps)
     EXPECT_EQ(ca.get(), directArray);
     EXPECT_TRUE(ca.isNonNull());
 }
-/*
+
 TEST_F(SimpleArrayTest, GetReleaseSwap)
 {
     SimpleArray array1;
@@ -59,7 +59,7 @@ TEST_F(SimpleArrayTest, GetReleaseSwap)
         delete[] directArray2;
     });
 }
-
+/*
 TEST_F(SimpleArrayTest, Reset)
 {
     SimpleArray array(new AllocationTracker[100]);

@@ -30,6 +30,9 @@ public:
 
     AllocationTracker* get() const;
     void reset();
+    void reset(AllocationTracker*);
+    void swap(SimpleArray&);
+    AllocationTracker* release();
     bool isNonNull() const;
 
 private:

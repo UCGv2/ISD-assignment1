@@ -23,3 +23,19 @@ AllocationTracker* SimpleArray::get() const {
 bool SimpleArray::isNonNull() const {
     return mArray != nullptr;
 }
+void SimpleArray::swap(SimpleArray& a2){
+    if (a2.mArray != mArray) {
+        AllocationTracker *holder = mArray;
+        mArray = a2.mArray;
+        a2.mArray = holder;
+    }
+}
+void SimpleArray::reset(AllocationTracker* r) {
+    delete[](mArray);
+    mArray = r;
+}
+AllocationTracker* SimpleArray::release(){
+    AllocationTracker* copy = mArray;
+    mArray = nullptr;
+    return copy;
+}
