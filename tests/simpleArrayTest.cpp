@@ -59,7 +59,7 @@ TEST_F(SimpleArrayTest, GetReleaseSwap)
         delete[] directArray2;
     });
 }
-/*
+
 TEST_F(SimpleArrayTest, Reset)
 {
     SimpleArray array(new AllocationTracker[100]);
@@ -78,7 +78,7 @@ TEST_F(SimpleArrayTest, Reset)
     EXPECT_EQ(array.get(), nullptr);
     EXPECT_EQ(AllocationTracker::getCount(), 0U);
 }
-
+/*
 TEST_F(SimpleArrayTest, Operators)
 {
     SimpleArray array;

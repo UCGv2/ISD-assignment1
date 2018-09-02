@@ -13,8 +13,7 @@ SimpleArray::SimpleArray(AllocationTracker *a) : mArray(nullptr) {
 }
 
 SimpleArray::~SimpleArray() {
-    delete[](mArray);
-    mArray = nullptr;
+    deleteOp(nullptr);
 }
 
 AllocationTracker* SimpleArray::get() const {
@@ -30,12 +29,19 @@ void SimpleArray::swap(SimpleArray& a2){
         a2.mArray = holder;
     }
 }
+void SimpleArray::reset() {
+    deleteOp(nullptr);
+}
 void SimpleArray::reset(AllocationTracker* r) {
-    delete[](mArray);
-    mArray = r;
+    deleteOp(r);
 }
 AllocationTracker* SimpleArray::release(){
     AllocationTracker* copy = mArray;
     mArray = nullptr;
     return copy;
+}
+
+void SimpleArray::deleteOp(AllocationTracker * a) {
+    delete[](mArray);
+    mArray = a;
 }

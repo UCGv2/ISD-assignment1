@@ -40,6 +40,7 @@ private:
 
     // Data members
     AllocationTracker *mArray;
+    void deleteOp (AllocationTracker*);
 
 
 };
