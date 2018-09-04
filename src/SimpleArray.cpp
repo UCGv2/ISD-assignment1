@@ -16,9 +16,17 @@ SimpleArray::~SimpleArray() {
     deleteOp(nullptr);
 }
 
-AllocationTracker* SimpleArray::get() const {
+const AllocationTracker* SimpleArray::get() const {
     return mArray;
 }
+AllocationTracker& SimpleArray::getReference(const uint32_t i) const {
+    if (i > mArray->getCount() ){
+        throw std::out_of_range("Out of Range ERROR");
+    } else {
+        return mArray[i];
+    }
+}
+
 bool SimpleArray::isNonNull() const {
     return mArray != nullptr;
 }

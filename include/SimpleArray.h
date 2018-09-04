@@ -5,6 +5,7 @@
 
 // Just include the special AllocationTracker class
 #include "AllocationTracker.h"
+#include <stdexcept>
 
 class SimpleArray {
 public:
@@ -12,10 +13,11 @@ public:
     SimpleArray();
 
     SimpleArray(AllocationTracker *);
+    SimpleArray(SimpleArray&)= delete;
 
     ~SimpleArray(); // should delete all things and return the allocation count to 0
 
-    SimpleArray &operator=(const SimpleArray &);
+    SimpleArray &operator=(const SimpleArray &)=delete;
 
     /**
      *  getReference is const and returns a non-const type in order to mimic
@@ -28,7 +30,7 @@ public:
 
     /*** Need to add some things here ***/
 
-    AllocationTracker* get() const;
+    const AllocationTracker* get() const;
     void reset();
     void reset(AllocationTracker*);
     void swap(SimpleArray&);

@@ -78,7 +78,7 @@ TEST_F(SimpleArrayTest, Reset)
     EXPECT_EQ(array.get(), nullptr);
     EXPECT_EQ(AllocationTracker::getCount(), 0U);
 }
-/*
+
 TEST_F(SimpleArrayTest, Operators)
 {
     SimpleArray array;
@@ -91,7 +91,7 @@ TEST_F(SimpleArrayTest, Operators)
         EXPECT_EQ(&array.getReference(i), &directArray[i]);
     }
 }
-
+/*
 TEST_F(SimpleArrayTest, Compilation)
 {
     SimpleArray a(new AllocationTracker[100]); // This line is correct
