@@ -13,11 +13,11 @@ public:
     SimpleArray();
 
     SimpleArray(AllocationTracker* a);
-    SimpleArray(SimpleArray& nope) = delete;
+    SimpleArray(SimpleArray& noCopy) = delete;
 
-    ~SimpleArray(); // should delete all things and return the allocation count to 0
+    ~SimpleArray();
 
-    SimpleArray& operator=(const SimpleArray&) = delete;
+    SimpleArray& operator=(const SimpleArray& noAssign) = delete;
 
     /**
      *  getReference is const and returns a non-const type in order to mimic

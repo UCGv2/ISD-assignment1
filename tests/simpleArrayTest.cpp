@@ -91,7 +91,7 @@ TEST_F(SimpleArrayTest, Operators)
         EXPECT_EQ(&array.getReference(i), &directArray[i]);
     }
 }
-/*
+
 TEST_F(SimpleArrayTest, Compilation)
 {
     SimpleArray a(new AllocationTracker[100]); // This line is correct
@@ -107,6 +107,4 @@ TEST_F(SimpleArrayTest, Compilation)
     // ca.reset();                        // This line is incorrect
     // ca.swap(a);                        // This line is incorrect
 }
-*/
 }
-
