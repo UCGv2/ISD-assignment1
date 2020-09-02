@@ -96,15 +96,15 @@ TEST_F(SimpleArrayTest, Compilation)
 {
     SimpleArray a(new AllocationTracker[100]); // This line is correct
     SimpleArray b(nullptr); // This line is correct
-    // SimpleArray c = new AllocationTracker[100]; // This line is incorrect
-    // SimpleArray d = nullptr;           // This line is incorrect
-    // SimpleArray d = nullptr;           // This line is incorrect
-    // SimpleArray e(a);                  // This line is incorrect
-    // SimpleArray f = a;                 // This line is incorrect
-    // b = a;                             // This line is incorrect
+    //     SimpleArray c = new AllocationTracker[100]; // This line is incorrect
+    //     SimpleArray d = nullptr;           // This line is incorrect
+    //     SimpleArray d = nullptr;           // This line is incorrect
+    //     SimpleArray e(a);                  // This line is incorrect
+    //     SimpleArray f = a;                 // This line is incorrect
+    //     b = a;                             // This line is incorrect
     const SimpleArray ca(new AllocationTracker[100]); // This line is correct
-    // ca.release();                      // This line is incorrect
-    // ca.reset();                        // This line is incorrect
-    // ca.swap(a);                        // This line is incorrect
+    //     ca.release();                      // This line is incorrect
+    //     ca.reset();                        // This line is incorrect
+    //     ca.swap(a);                        // This line is incorrect
 }
 }
